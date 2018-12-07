@@ -1,0 +1,16 @@
+0.1.0
+Assets\Assets\UI\ChargePanel.prefab
+ea4309a80c4589709b9609cf39254f0ee7eb5658
+0
+2e67ca479648b7464236fd4f972b502f
+0
+Assets\Assets\UI\LoginPanel.prefab
+ad2a0a91414498d101e439b09de852ac42dd60fb
+0
+b37f8150045e8896edb3784a95ac21db
+0
+Assets\Assets\UI\MainPanel.prefab
+849edb832c210ec0548a343392637b23a5af8709
+0
+2e0850e3b8db48117f3c3d39385385a8
+0

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerGame", "TimerGame.csproj", "{939A50BB-D2A7-270C-CCE4-5A6E8CB7CC3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerGame.Editor", "TimerGame.Editor.csproj", "{65C77976-0939-6560-1D31-26134BAC2C42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{939A50BB-D2A7-270C-CCE4-5A6E8CB7CC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939A50BB-D2A7-270C-CCE4-5A6E8CB7CC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939A50BB-D2A7-270C-CCE4-5A6E8CB7CC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939A50BB-D2A7-270C-CCE4-5A6E8CB7CC3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C77976-0939-6560-1D31-26134BAC2C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C77976-0939-6560-1D31-26134BAC2C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C77976-0939-6560-1D31-26134BAC2C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C77976-0939-6560-1D31-26134BAC2C42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
