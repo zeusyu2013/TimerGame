@@ -1,4 +1,4 @@
-﻿public delegate void LoadConfigComplete();
+﻿public delegate void LoadConfigComplete(bool success);
 
 public class IConfig
 {

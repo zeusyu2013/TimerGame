@@ -2,22 +2,11 @@
 using Tangzx.ABSystem;
 using System.Collections.Generic;
 
-public class UIMgr : MonoBehaviour
+public class UIMgr : Singleton<UIMgr>
 {
-    private static UIMgr _Instance = null;
-    public static UIMgr Instance
-    {
-        get { return _Instance; }
-    }
-    
     private Transform rootTrans;
     private Dictionary<string, IUI> uiDic = new Dictionary<string, IUI>();
-
-    private void Awake()
-    {
-        _Instance = this;
-    }
-
+    
     private void Start()
     {
         rootTrans = GameObject.Find("Canvas").transform;
@@ -31,22 +20,28 @@ public class UIMgr : MonoBehaviour
             return;
         }
 
-        AssetBundleManager.Instance.Load(Define.ResourcesPath + "UI/" + name + ".prefab", (o) =>
+        AssetBundleManager.Instance.Load(Define.ResourcesPath + "UI." + name + ".prefab", (o) =>
         {
+            if (o == null)
+            {
+                Logger.LogError("o is null");
+                return;
+            }
+
             GameObject go = o.Instantiate();
             if (go == null)
             {
-                Debug.LogError("ui " + name + " Instantiate failed!");
+                Logger.LogError("ui " + name + " Instantiate failed!");
                 return;
             }
-                        
+
             go.transform.SetParent(rootTrans);
             go.transform.localPosition = Vector3.zero;
             go.transform.localScale = Vector3.one;
             IUI ui = go.AddComponent(System.Type.GetType(name)) as IUI;
             if (ui == null)
             {
-                Debug.LogError("ui " + name + " AddComponent failed!");
+                Logger.LogError("ui " + name + " AddComponent failed!");
                 return;
             }
             

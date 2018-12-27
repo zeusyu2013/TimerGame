@@ -33,22 +33,11 @@ public class TimerData
     public TimerCallback timerCB;
 }
 
-public class TimerMgr : MonoBehaviour
+public class TimerMgr : Singleton<TimerMgr>
 {
-    private static TimerMgr _Instance = null;
-    public static TimerMgr Instance
-    {
-        get { return _Instance; }
-    }
-
     private Dictionary<string, TimerData> timerExcuteDic = new Dictionary<string, TimerData>();
     private Dictionary<string, TimerData> timerAddDic = new Dictionary<string, TimerData>();
     private List<string> timerDelList = new List<string>();
-
-    private void Awake()
-    {
-        _Instance = this;
-    }
 
     public void AddTimer(string name, TIMERTYPE type, float inval, TimerCallback cb, int counter = 0, float delay = 0.0f)
     {

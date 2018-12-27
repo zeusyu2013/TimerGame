@@ -21,7 +21,7 @@ public class LoadingPanel : IUI
 
         slider.value = schedule;
 
-        if (slider.value >= 0.99f)
+        if (slider.value >= 1.0f)
         {
             DispatchMgr.Instance.FireEvent(Define.DISPATCHEVENT.DISPATCHEVENT_LOADINGEND);
             UIMgr.Instance.Destroy("LoadingPanel");

@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 4147646125
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cb185e69d1931371ec9e728e0955d66f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Assets/Config/flight_config.json
+Dependencies: []

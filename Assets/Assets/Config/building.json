@@ -1,0 +1,23 @@
+[
+    {"Config":1000,"Name":"建筑1","MaxLevel":50,"GenerateBaseMoney":100},
+    {"Config":1001,"Name":"建筑2","MaxLevel":50,"GenerateBaseMoney":5000},
+    {"Config":1002,"Name":"建筑3","MaxLevel":50,"GenerateBaseMoney":25000},
+    {"Config":1003,"Name":"建筑4","MaxLevel":50,"GenerateBaseMoney":45000},
+    {"Config":1004,"Name":"建筑5","MaxLevel":50,"GenerateBaseMoney":65000},
+    {"Config":1005,"Name":"建筑6","MaxLevel":50,"GenerateBaseMoney":85000},
+    {"Config":1006,"Name":"建筑7","MaxLevel":50,"GenerateBaseMoney":105000},
+    {"Config":1007,"Name":"建筑8","MaxLevel":50,"GenerateBaseMoney":125000},
+    {"Config":1008,"Name":"建筑9","MaxLevel":50,"GenerateBaseMoney":145000},
+    {"Config":1009,"Name":"建筑10","MaxLevel":50,"GenerateBaseMoney":165000},
+    {"Config":1010,"Name":"建筑11","MaxLevel":50,"GenerateBaseMoney":185000},
+    {"Config":1011,"Name":"建筑12","MaxLevel":50,"GenerateBaseMoney":205000},
+    {"Config":1012,"Name":"建筑13","MaxLevel":50,"GenerateBaseMoney":225000},
+    {"Config":1013,"Name":"建筑14","MaxLevel":50,"GenerateBaseMoney":245000},
+    {"Config":1014,"Name":"建筑15","MaxLevel":50,"GenerateBaseMoney":265000},
+    {"Config":1015,"Name":"建筑16","MaxLevel":50,"GenerateBaseMoney":285000},
+    {"Config":1016,"Name":"建筑17","MaxLevel":50,"GenerateBaseMoney":305000},
+    {"Config":1017,"Name":"建筑18","MaxLevel":50,"GenerateBaseMoney":325000},
+    {"Config":1018,"Name":"建筑19","MaxLevel":50,"GenerateBaseMoney":345000},
+    {"Config":1019,"Name":"建筑20","MaxLevel":50,"GenerateBaseMoney":365000}
+    
+    ]

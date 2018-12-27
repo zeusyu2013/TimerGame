@@ -16,3 +16,6 @@ MonoBehaviour:
   - valid: 1
     path: Assets/Assets
     filter: '*.prefab'
+  - valid: 1
+    path: Assets/Assets
+    filter: '*.json'

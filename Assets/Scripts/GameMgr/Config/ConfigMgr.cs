@@ -1,22 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Tangzx.ABSystem;
 using UnityEngine;
 
-public class ConfigMgr : MonoBehaviour
+public class ConfigMgr : Singleton<ConfigMgr>
 {
-    private static ConfigMgr _Instance = null;
-    public static ConfigMgr Instance
-    {
-        get { return _Instance; }
-    }
-
-    private void Awake()
-    {
-        _Instance = this;
-    }
-
     private int configCounter = 0;
+    private bool configAllLoaded = false;
     private Dictionary<IConfig, string> confDic = new Dictionary<IConfig, string>();
 
     public void AddConfig(IConfig conf, string path)
@@ -39,21 +28,27 @@ public class ConfigMgr : MonoBehaviour
                 continue;
             }
 
-            AssetBundleManager.Instance.Load(Define.ResourcesPath + "Config/" + kvp.Value + ".json", (o) =>
+            AssetBundleManager.Instance.Load(Define.ResourcesPath + "Config." + kvp.Value + ".json", (o) =>
             {
-                if (o == null || o.mainObject == null)
+                if (o == null)
                 {
                     return;
                 }
 
-                TextAsset text = o.mainObject as TextAsset;
+                TextAsset text = o.Require<TextAsset>(this);
                 conf.LoadConfig(text.text, OnLoadConfigComplete);
             });
         }
     }
 
-    public void OnLoadConfigComplete()
+    public void OnLoadConfigComplete(bool success)
     {
+        if (!success)
+        {
+            Logger.LogError("LoadConfig Failed! Config Index is " + configCounter);
+            return;
+        }
+
         configCounter++;
 
         if (confDic.Count != 0)
@@ -61,15 +56,16 @@ public class ConfigMgr : MonoBehaviour
             DispatchMgr.Instance.FireEvent(Define.DISPATCHEVENT.DISPATCHEVENT_LOADINGSCHEDULE,
             new object[] { (float)configCounter / (float)(confDic.Count) });
         }
+
+        if (configCounter == confDic.Count)
+        {
+            configAllLoaded = true;
+            DispatchMgr.Instance.FireEvent(Define.DISPATCHEVENT.DISPATCHEVENT_ALLCONFIGLOADED);
+        }
     }
 
-    private void Update()
+    public bool GetAllConfigLoaded()
     {
-        if (configCounter < confDic.Count)
-        {
-            return;
-        }
-
-
+        return configAllLoaded;
     }
 }

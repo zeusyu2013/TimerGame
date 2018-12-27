@@ -1,37 +1,65 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Text;
+using LitJson;
 
-public class Utils : MonoBehaviour
+public class Utils
 {
-    public static string NumberFormat(long num)
+    private static StringBuilder sb = new StringBuilder();
+    public static string StringBuilder(params object[] args)
     {
-        int count = 0;
-        // 上万
-        if (num / 10000 > 0)
+        sb.Remove(0, sb.Length);
+        foreach (object o in args)
         {
-            count = 1;
+            sb.Append(o);
         }
 
-        // 上亿
-        if (num / 100000000 > 0)
+        return sb.ToString();
+    }
+
+    #region <>类型转换<>
+
+    public static int String2Int(string str)
+    {
+        int value = 0;
+        if (string.IsNullOrEmpty(str))
         {
-            count = 2;
+            return value;
         }
 
-        long new_number = 0;
-        string unit = "";
-        if (count == 1)
+        int.TryParse(str, out value);
+        return value;
+    }
+
+    public static float String2Float(string str)
+    {
+        float value = 0.0f;
+        if (string.IsNullOrEmpty(str))
         {
-            new_number = num / 10000;
-            unit = "万";
-        }
-        else if (count == 2)
-        {
-            new_number = num / 100000000;
-            unit = "亿";
+            return value;
         }
 
-        return string.Format("{0}{1}", new_number, unit);
+        float.TryParse(str, out value);
+        return value;
+    }
+
+    #endregion
+
+    public static int GetJsonInt(JsonData data)
+    {
+        if (data == null)
+        {
+            return 0;
+        }
+
+        return String2Int(data.ToString());
+    }
+
+    public static float GetJsonFloat(JsonData data)
+    {
+        if (data == null)
+        {
+            return 0.0f;
+        }
+
+        return String2Float(data.ToString());
     }
 }

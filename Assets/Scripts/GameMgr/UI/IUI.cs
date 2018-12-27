@@ -26,6 +26,11 @@ public class IUI : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public Transform GetChild(string path)
+    {
+        return transform.Find(path);
+    }
+
     public T GetChild<T>(string path) where T : MonoBehaviour
     {
         return transform.Find(path).GetComponent<T>();

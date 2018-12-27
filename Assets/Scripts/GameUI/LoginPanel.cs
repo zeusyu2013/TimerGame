@@ -10,10 +10,10 @@ public class LoginPanel : IUI
         base.OnCreate();
 
         connect = transform.Find("Button").GetComponent<Button>();
-        connect.onClick.AddListener(OnConnect);
+        connect.onClick.AddListener(OnClick);
 
         connect = transform.Find("Send").GetComponent<Button>();
-        connect.onClick.AddListener(Send);
+        connect.onClick.AddListener(OnUpgrade);
     }
 
     public override void OnDestroy()
@@ -23,13 +23,15 @@ public class LoginPanel : IUI
         base.OnDestroy();
     }
 
-    public void OnConnect()
+    public void OnClick()
     {
-        NetMgr.Instance.Connect("127.0.0.1", 9001);
+        AdsMgr.Instance.ShowAds(1, null);
+        NetMgr.Instance.InitNetwork();
+        NetMgr.Instance.Connect("127.0.0.1", 3563);
     }
 
-    public void Send()
+    public void OnUpgrade()
     {
-        NetMgr.Instance.Send("testtesttesttesttesttesttest");
+        NetMgr.Instance.Send(Proto.Hello("Zeusyu"));
     }
 }

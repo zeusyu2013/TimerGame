@@ -3,19 +3,8 @@ using UnityEngine;
 
 public delegate void EventFireCallback(params object[] args);
 
-public class DispatchMgr : MonoBehaviour
+public class DispatchMgr : Singleton<DispatchMgr>
 {
-    private static DispatchMgr _Instance = null;
-    public static DispatchMgr Instance
-    {
-        get { return _Instance; }
-    }
-
-    private void Awake()
-    {
-        _Instance = this;
-    }
-
     private Dictionary<Define.DISPATCHEVENT, List<EventFireCallback>> eventDic = 
         new Dictionary<Define.DISPATCHEVENT, List<EventFireCallback>>();
 

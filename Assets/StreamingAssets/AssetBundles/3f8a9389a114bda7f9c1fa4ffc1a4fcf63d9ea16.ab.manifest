@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2738011670
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 119d0547e07e5fc0e6ba7706d24ea0db
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Assets/Config/base_config.json
+Dependencies: []

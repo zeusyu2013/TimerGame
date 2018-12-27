@@ -9,19 +9,8 @@ public enum GAMESTAGE
     GAMESTAGE_MAX
 }
 
-public class GameStageMgr : MonoBehaviour
+public class GameStageMgr : Singleton<GameStageMgr>
 {
-    private static GameStageMgr _Instance = null;
-    public static GameStageMgr Instance
-    {
-        get { return _Instance; }
-    }
-
-    private void Awake()
-    {
-        _Instance = this;
-    }
-
     private IGameStage gameStage = null;
     private Dictionary<GAMESTAGE, IGameStage> gameStageDic = new Dictionary<GAMESTAGE, IGameStage>();
 

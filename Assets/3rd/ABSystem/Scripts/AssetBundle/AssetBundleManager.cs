@@ -19,14 +19,9 @@ namespace Tangzx.ABSystem
         State_Complete = 3
     }
 
-    public class AssetBundleManager : MonoBehaviour
+    public class AssetBundleManager : Singleton<AssetBundleManager>
     {
         public static Version version = new Version(0, 1, 0);
-        private static AssetBundleManager _Instance;
-        public static AssetBundleManager Instance
-        {
-            get { return _Instance; }
-        }
 
         public static string NAME = "AssetBundleManager";
         public static bool enableLog = true;
@@ -87,7 +82,6 @@ namespace Tangzx.ABSystem
 
         public void Awake()
         {
-            _Instance = this;
             pathResolver = new AssetBundlePathResolver();
             InvokeRepeating("CheckUnusedBundle", 0, 5);
         }

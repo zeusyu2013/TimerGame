@@ -5,12 +5,9 @@
         base.OnEnter();
 
         // 加载配置
+        
 
-
-        // 初始化网络
-        NetMgr.Instance.InitNetwork();
-
-        DispatchMgr.Instance.RegisterEvent(Define.DISPATCHEVENT.DISPATCHEVENT_LOADINGEND, OnLoginPanelShow);
+        DispatchMgr.Instance.RegisterEvent(Define.DISPATCHEVENT.DISPATCHEVENT_LOADINGEND, OnAirPortPanelShow);
     }
 
     public override void OnUpdate()
@@ -23,8 +20,8 @@
         base.OnExit();
     }
 
-    private void OnLoginPanelShow(object[] args)
+    private void OnAirPortPanelShow(object[] args)
     {
-        UIMgr.Instance.Create("LoginPanel");
+        
     }
 }
